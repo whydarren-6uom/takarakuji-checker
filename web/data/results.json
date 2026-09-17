@@ -1,82 +1,162 @@
 {
   "schema_version": 1,
-  "last_attempt": "2026-09-17T15:00:16.387300+00:00",
-  "last_success": "2026-09-17T00:00:00+00:00",
+  "last_attempt": "2026-09-17T15:09:18.250562+00:00",
+  "last_success": "2026-09-17T15:09:18.250562+00:00",
   "last_complete_success": null,
-  "sync_status": "failed",
-  "seed_note": "首版包含经真实官网 DOM 样本验证的开奖；自动同步会继续扩展历史范围。",
+  "sync_status": "partial",
+  "seed_note": "LOTO7 已人工核对至第694回；其余类别保留最近一份经真实官网 DOM 验证的数据。",
   "errors": [
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/backnumber/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=tokyo",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kct",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kinki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=nishinihon",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=chiiki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     }
   ],
-  "coverage": {},
+  "coverage": {
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 0,
+      "transport": "r.jina.ai text gateway"
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/A1022138.CSV": {
+      "last_success": "2026-09-17T15:08:46.339861+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 0,
+      "transport": "r.jina.ai text gateway"
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/A1011401.CSV": {
+      "last_success": "2026-09-17T15:08:46.339861+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/A1011400.CSV": {
+      "last_success": "2026-09-17T15:08:46.339861+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 0,
+      "transport": "r.jina.ai text gateway"
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/A1040485.CSV": {
+      "last_success": "2026-09-17T15:08:46.339861+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/A1040484.CSV": {
+      "last_success": "2026-09-17T15:08:46.339861+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 0,
+      "transport": "r.jina.ai text gateway"
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007073.CSV": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 2
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv": {
+      "last_success": "2026-09-17T15:09:18.250562+00:00",
+      "count": 2,
+      "transport": "r.jina.ai text gateway"
+    }
+  },
   "draws": [
+    {
+      "game": "bingo5",
+      "draw": 484,
+      "date": "2026-08-19",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/A1040484.CSV",
+      "prizes": {
+        "1等": 18357800,
+        "2等": 258700,
+        "3等": 44100,
+        "4等": 16800,
+        "5等": 2400,
+        "6等": 600,
+        "7等": 200
+      },
+      "numbers": [
+        1,
+        9,
+        13,
+        17,
+        23,
+        28,
+        34,
+        40
+      ],
+      "bonus": [],
+      "fetched_at": "2026-09-17T15:08:46.339861+00:00"
+    },
+    {
+      "game": "bingo5",
+      "draw": 485,
+      "date": "2026-08-26",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/A1040485.CSV",
+      "prizes": {
+        "1等": 2951300,
+        "2等": 451700,
+        "3等": 56600,
+        "4等": 18700,
+        "5等": 2400,
+        "6等": 700,
+        "7等": 200
+      },
+      "numbers": [
+        4,
+        9,
+        11,
+        19,
+        22,
+        29,
+        32,
+        38
+      ],
+      "bonus": [],
+      "fetched_at": "2026-09-17T15:08:46.339861+00:00"
+    },
     {
       "game": "bingo5",
       "draw": 486,
@@ -521,6 +601,31 @@
       "fetched_at": "2026-09-17T00:00:00+00:00"
     },
     {
+      "game": "loto6",
+      "draw": 2138,
+      "date": "2026-09-17",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/A1022138.CSV",
+      "prizes": {
+        "1等": null,
+        "2等": 10887100,
+        "3等": 432800,
+        "4等": 8600,
+        "5等": 1000
+      },
+      "numbers": [
+        9,
+        16,
+        21,
+        26,
+        38,
+        40
+      ],
+      "bonus": [
+        12
+      ],
+      "fetched_at": "2026-09-17T15:08:46.339861+00:00"
+    },
+    {
       "game": "loto7",
       "draw": 689,
       "date": "2026-08-07",
@@ -631,6 +736,108 @@
         34
       ],
       "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 693,
+      "date": "2026-09-04",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": 1200000000,
+        "2等": 9294500,
+        "3等": 547400,
+        "4等": 5700,
+        "5等": 1300,
+        "6等": 1000
+      },
+      "numbers": [
+        16,
+        17,
+        22,
+        23,
+        25,
+        33,
+        35
+      ],
+      "bonus": [
+        13,
+        31
+      ],
+      "fetched_at": "2026-09-17T15:04:07+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 694,
+      "date": "2026-09-11",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": 1200000000,
+        "2等": 10624700,
+        "3等": 620800,
+        "4等": 7100,
+        "5等": 1400,
+        "6等": 1000
+      },
+      "numbers": [
+        3,
+        13,
+        24,
+        26,
+        30,
+        31,
+        36
+      ],
+      "bonus": [
+        23,
+        34
+      ],
+      "fetched_at": "2026-09-17T15:04:07+00:00"
+    },
+    {
+      "game": "miniloto",
+      "draw": 1400,
+      "date": "2026-08-18",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/A1011400.CSV",
+      "prizes": {
+        "1等": 22647900,
+        "2等": 151800,
+        "3等": 12400,
+        "4等": 1100
+      },
+      "numbers": [
+        1,
+        14,
+        15,
+        17,
+        29
+      ],
+      "bonus": [
+        30
+      ],
+      "fetched_at": "2026-09-17T15:08:46.339861+00:00"
+    },
+    {
+      "game": "miniloto",
+      "draw": 1401,
+      "date": "2026-08-25",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/A1011401.CSV",
+      "prizes": {
+        "1等": 9302100,
+        "2等": 236600,
+        "3等": 11700,
+        "4等": 1100
+      },
+      "numbers": [
+        15,
+        17,
+        23,
+        26,
+        31
+      ],
+      "bonus": [
+        22
+      ],
+      "fetched_at": "2026-09-17T15:08:46.339861+00:00"
     },
     {
       "game": "miniloto",
@@ -964,6 +1171,21 @@
       "fetched_at": "2026-09-17T00:00:00+00:00"
     },
     {
+      "game": "numbers3",
+      "draw": 7073,
+      "date": "2026-09-17",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007073.CSV",
+      "prizes": {
+        "straight": 87100,
+        "box": 29000,
+        "set_straight": 58000,
+        "set_box": 14500,
+        "mini": 8700
+      },
+      "number": "188",
+      "fetched_at": "2026-09-17T15:09:18.250562+00:00"
+    },
+    {
       "game": "numbers4",
       "draw": 7061,
       "date": "2026-09-01",
@@ -1130,6 +1352,20 @@
       },
       "number": "9749",
       "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7073,
+      "date": "2026-09-17",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007073.CSV",
+      "prizes": {
+        "straight": 986400,
+        "box": 82200,
+        "set_straight": 534300,
+        "set_box": 41100
+      },
+      "number": "6916",
+      "fetched_at": "2026-09-17T15:09:18.250562+00:00"
     },
     {
       "game": "tokyo",

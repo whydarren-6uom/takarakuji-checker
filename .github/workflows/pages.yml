@@ -45,7 +45,7 @@ jobs:
           FULL: ${{ github.event.inputs.full }}
           EVENT: ${{ github.event_name }}
         run: |
-          if [ "$FULL" = "true" ] || [ "$EVENT" = "push" ]; then
+          if [ "$FULL" = "true" ]; then
             python sync_data.py --full
           else
             python sync_data.py
