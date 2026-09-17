@@ -1,59 +1,59 @@
 {
   "schema_version": 1,
-  "last_attempt": "2026-09-17T15:10:18.403262+00:00",
-  "last_success": "2026-09-17T15:10:18.403262+00:00",
+  "last_attempt": "2026-09-17T15:11:34.857812+00:00",
+  "last_success": "2026-09-17T15:11:34.857812+00:00",
   "last_complete_success": null,
   "sync_status": "partial",
-  "seed_note": "LOTO7 已人工核对至第694回；其余类别保留最近一份经真实官网 DOM 验证的数据。",
+  "seed_note": "数字选择式通过官方 CSV 自动校验更新；地域券保留最近一份经官网 DOM 验证的数据。",
   "errors": [
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=tokyo",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kct",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kinki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=nishinihon",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     },
     {
       "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=chiiki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
+      "error": "请先运行：python -m pip install playwright；python -m playwright install chromium"
     }
   ],
   "coverage": {
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv": {
-      "last_success": "2026-09-17T15:10:18.403262+00:00",
+      "last_success": "2026-09-17T15:11:34.857812+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -62,7 +62,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv": {
-      "last_success": "2026-09-17T15:10:18.403262+00:00",
+      "last_success": "2026-09-17T15:11:34.857812+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -75,7 +75,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv": {
-      "last_success": "2026-09-17T15:10:18.403262+00:00",
+      "last_success": "2026-09-17T15:11:34.857812+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -88,7 +88,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv": {
-      "last_success": "2026-09-17T15:10:18.403262+00:00",
+      "last_success": "2026-09-17T15:11:34.857812+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -97,7 +97,7 @@
       "count": 2
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv": {
-      "last_success": "2026-09-17T15:10:18.403262+00:00",
+      "last_success": "2026-09-17T15:11:34.857812+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     }

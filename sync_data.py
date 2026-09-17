@@ -227,6 +227,7 @@ def sync(path, full=False):
               'last_success':now if successes else old.get('last_success'),
               'last_complete_success':now if successes and not errors else old.get('last_complete_success'),
               'sync_status':'ok' if not errors and successes else 'partial' if successes else 'failed',
+              'seed_note':'数字选择式通过官方 CSV 自动校验更新；地域券保留最近一份经官网 DOM 验证的数据。',
               'errors':errors, 'coverage':coverage,
               'draws': sorted(draws.values(),key=lambda d:(d['game'],d['draw']))}
     path.parent.mkdir(parents=True, exist_ok=True)
