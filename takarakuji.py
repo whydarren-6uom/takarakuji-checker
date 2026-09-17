@@ -23,6 +23,7 @@ from urllib.parse import urljoin, urlparse
 
 BASE = 'https://www.mizuhobank.co.jp'
 REGIONS = {
+    'zenkoku': '全国自治宝くじ',
     'tokyo': '東京都宝くじ', 'kct': '関東・中部・東北自治宝くじ',
     'kinki': '近畿宝くじ', 'nishinihon': '西日本宝くじ',
     'chiiki': '地域医療等振興自治宝くじ',
@@ -32,7 +33,7 @@ GAMES = {'loto6': ('loto', 6, 43, 1), 'loto7': ('loto', 7, 37, 2),
          'numbers3': ('numbers', 3, 9, 0), 'numbers4': ('numbers', 4, 9, 0)}
 ALIASES = {'ロト6':'loto6', 'ロト7':'loto7', 'ミニロト':'miniloto',
            'ビンゴ5':'bingo5', 'ナンバーズ3':'numbers3', 'ナンバーズ4':'numbers4',
-           **{v:k for k,v in REGIONS.items()}}
+           '全国通常宝くじ':'zenkoku', **{v:k for k,v in REGIONS.items()}}
 MODES = {'straight':'ストレート', 'box':'ボックス',
          'set_straight':'セット(ストレート)', 'set_box':'セット(ボックス)', 'mini':'ミニ'}
 
@@ -68,14 +69,17 @@ def yen(x):
     x = norm(x).replace(',', '')
     if x in ('該当なし', '-', '—', ''):
         return None
-    if not re.fullmatch(r'(?:\d+億)?(?:\d+万)?(?:\d+)?円', x):
+    if not re.fullmatch(r'(?:\d+(?:\.\d+)?億)?(?:\d+(?:\.\d+)?万)?(?:\d+)?円', x):
         raise CheckError(f'无法识别奖金：{x!r}')
     total = 0
     x = x[:-1]
     for unit, scale in [('億', 100000000), ('万', 10000)]:
         if unit in x:
             n, x = x.split(unit)
-            total += int(n)*scale
+            value = float(n) * scale
+            if not value.is_integer():
+                raise CheckError(f'无法精确换算奖金：{x!r}')
+            total += int(value)
     return total + (int(x) if x else 0)
 
 def values(x):
@@ -217,9 +221,12 @@ def parse_regional(page, game, number, url):
     if len(found) != 1:
         raise CheckError('找不到唯一且完整的地域宝くじ开奖表')
     rules = found[0]
-    if any(r['kind'] in ('adjacent','different_group') for r in rules):
-        if not any(r['grade']=='1等' and r['kind']=='exact' for r in rules):
+    if any(r['kind'] == 'adjacent' for r in rules):
+        if not any(r['grade']=='1等' and r['kind'] in ('exact','group_suffix') for r in rules):
             raise CheckError('前後賞／組違い賞缺少可核对的1等基准')
+    if any(r['kind'] == 'different_group' for r in rules):
+        if not any(r['grade']=='1等' and r['kind']=='exact' for r in rules):
+            raise CheckError('組違い賞缺少可核对的1等基准')
     metadata = {}
     for label in ['抽せん日','支払期間']:
         m = re.search(label+r'[：:]([^\n]+)', page['title'])
@@ -266,7 +273,7 @@ def check_ticket(ticket, draw):
             raise CheckError('请输入彩票上的組（1–999）')
         group = int(group)
         matched = []
-        first = [r for r in draw['rules'] if r['grade']=='1等' and r['kind']=='exact']
+        first = [r for r in draw['rules'] if r['grade']=='1等' and r['kind'] in ('exact','group_suffix')]
         for r in draw['rules']:
             kind = r['kind']
             hit = False
@@ -276,13 +283,15 @@ def check_ticket(ticket, draw):
             elif kind == 'group_suffix':
                 hit = number == r['digits'] and str(group).zfill(3).endswith(r['group_digits'])
             elif kind == 'different_group':
-                hit = any(number==f['digits'] and group!=f['group_id'] for f in first)
+                hit = any(f['kind']=='exact' and number==f['digits'] and group!=f['group_id'] for f in first)
             elif kind == 'adjacent':
                 # Do not invent cross-group or wraparound behavior for unusual boundaries.
                 for f in first:
                     if f['digits'] in ('100000','199999') and number in ('100000','199999'):
                         raise CheckError('前後賞涉及号码边界，请以该期官方规则人工核验')
-                hit = any(group==f['group_id'] and abs(int(number)-int(f['digits']))==1 for f in first)
+                hit = any((group==f['group_id'] if f['kind']=='exact' else
+                           str(group).zfill(3).endswith(f['group_digits'])) and
+                          abs(int(number)-int(f['digits']))==1 for f in first)
             if hit:
                 item = {'grade':r['grade'],'yen_per_ticket':r['yen']}
                 if item not in matched: matched.append(item)

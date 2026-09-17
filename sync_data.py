@@ -10,8 +10,8 @@ import ssl
 import sys
 import unicodedata
 from urllib.request import Request, urlopen
-from takarakuji import (OfficialClient, GAMES, REGIONS, parse_digital,
-                        parse_regional, validate_numbers)
+from takarakuji import (CheckError, OfficialClient, GAMES, REGIONS, classify_rule,
+                        norm, parse_digital, parse_regional, validate_numbers, yen)
 
 OFFICIAL = 'https://www.mizuhobank.co.jp'
 CSV_FAMILIES = {
@@ -21,6 +21,10 @@ CSV_FAMILIES = {
     'bingo5': ('/retail/takarakuji/bingo/bingo5/csv/bingo5.csv', 'A104', 4),
     'numbers': ('/retail/takarakuji/numbers/csv/numbers.csv', 'A100', 4),
 }
+REGIONAL_CSV = {
+    game: f'/retail/takarakuji/tsujyo/{game}/csv/{game}.csv'
+    for game in REGIONS
+}
 
 
 def _norm(value):
@@ -28,7 +32,8 @@ def _norm(value):
 
 
 def _date(value):
-    match = re.fullmatch(r'令和(\d+)年(\d+)月(\d+)日', _norm(value))
+    compact = re.sub(r'\s+', '', _norm(value))
+    match = re.fullmatch(r'令和(\d+)年(\d+)月(\d+)日', compact)
     if not match:
         raise ValueError(f'无法识别官方 CSV 日期：{value!r}')
     return f'{2018 + int(match[1]):04}-{int(match[2]):02}-{int(match[3]):02}'
@@ -144,6 +149,62 @@ def gateway_entries(manifest_text, family):
     return entries
 
 
+def parse_regional_csv(text, game, source):
+    """Parse every complete draw embedded in an official regional CSV."""
+    rows = [[_norm(cell) for cell in row]
+            for row in csv.reader(text.splitlines()) if row]
+    starts = [i for i, row in enumerate(rows) if row and row[0] == 'A01']
+    if not starts or starts[0] != 0:
+        raise ValueError('地域 CSV header 异常')
+    records = []
+    expected = norm(REGIONS[game])
+    for pos, start in enumerate(starts):
+        block = rows[start + 1:starts[pos + 1] if pos + 1 < len(starts) else len(rows)]
+        if len(block) < 3:
+            raise ValueError('地域 CSV 期次区块不完整')
+        header = block[0]
+        match = re.fullmatch(r'第0*(\d+)回(.+)', norm(header[0]))
+        if not match or match[2] != expected or len(header) < 3:
+            raise ValueError(f'地域 CSV 期号 header 异常：{header!r}')
+        number = int(match[1])
+        rules = []
+        for row in block[2:]:
+            if len(row) < 4 or not row[0]:
+                raise ValueError(f'第{number}回奖项行异常：{row!r}')
+            grade, amount, group, code = map(norm, row[:4])
+            if group in ('1等の前後の番号', '1等の組違い同番号'):
+                code, group = group, ''
+            elif re.fullmatch(r'\d{1,6}', code):
+                code += '番'
+            else:
+                raise ValueError(f'第{number}回号码格式异常：{row!r}')
+            rule = {'grade': grade, 'yen': yen(amount), 'group': group, 'number': code}
+            if rule['yen'] is None:
+                raise ValueError(f'第{number}回奖金额缺失')
+            try:
+                classify_rule(rule)
+            except CheckError as error:
+                raise ValueError(f'第{number}回包含未知规则：{error}') from error
+            rules.append(rule)
+        first = [r for r in rules if r['grade'] == '1等']
+        if not rules or any(r['kind'] == 'adjacent' for r in rules) and not any(
+                r['kind'] in ('exact', 'group_suffix') for r in first):
+            raise ValueError(f'第{number}回缺少前後賞基准')
+        if any(r['kind'] == 'different_group' for r in rules) and not any(
+                r['kind'] == 'exact' for r in first):
+            raise ValueError(f'第{number}回缺少組違い賞基准')
+        records.append({
+            'game': game, 'draw': number, 'date': _date(header[2]),
+            'name': _norm(header[1]) if len(header) > 1 else '',
+            'source': f'{OFFICIAL}/takarakuji/check/tsujyo/result.html?type={game}&order={number}',
+            'data_source': source, 'rules': rules,
+        })
+    keys = [(record['game'], record['draw']) for record in records]
+    if len(keys) != len(set(keys)):
+        raise ValueError('地域 CSV 含重复期号')
+    return records
+
+
 def sync(path, full=False):
     old = json.loads(path.read_text()) if path.exists() else {'draws': [], 'coverage': {}}
     draws = {(d['game'], d['draw']): d for d in old['draws']}
@@ -223,12 +284,39 @@ def sync(path, full=False):
         except Exception as e:
             errors.append({'source': manifest_source, 'error': str(e)[:700]})
             print(f'FAILED CSV fallback {manifest_source}: {e}', file=sys.stderr)
+    # Regional files are complete rolling manifests: one validated fetch imports
+    # every currently published draw, including 全国自治 and Jumbo editions.
+    for game, manifest_path in REGIONAL_CSV.items():
+        manifest_source = OFFICIAL + manifest_path
+        try:
+            records = parse_regional_csv(fetch_text_gateway(manifest_source), game,
+                                         manifest_source)
+            for record in records:
+                record['fetched_at'] = now
+                draws[record['game'], record['draw']] = record
+            coverage[manifest_source] = {
+                'last_success': now, 'count': len(records),
+                'transport': 'r.jina.ai text gateway',
+            }
+            successes.append(manifest_source)
+        except Exception as e:
+            errors.append({'source': manifest_source, 'error': str(e)[:700]})
+            print(f'FAILED regional CSV {manifest_source}: {e}', file=sys.stderr)
+    authoritative_sources = {
+        *(OFFICIAL + path for path, _prefix, _width in CSV_FAMILIES.values()),
+        *(OFFICIAL + path for path in REGIONAL_CSV.values()),
+    }
+    authoritative_complete = authoritative_sources <= set(successes)
+    # Direct DOM reads and the CSV transport are two routes to the same official
+    # data. A blocked DOM route is not a failed synchronization when every
+    # validated official manifest succeeded.
+    reported_errors = [] if authoritative_complete else errors
     result = {**old, 'schema_version':1, 'last_attempt':now,
               'last_success':now if successes else old.get('last_success'),
-              'last_complete_success':now if successes and not errors else old.get('last_complete_success'),
-              'sync_status':'ok' if not errors and successes else 'partial' if successes else 'failed',
-              'seed_note':'数字选择式通过官方 CSV 自动校验更新；地域券保留最近一份经官网 DOM 验证的数据。',
-              'errors':errors, 'coverage':coverage,
+              'last_complete_success':now if authoritative_complete else old.get('last_complete_success'),
+              'sync_status':'ok' if authoritative_complete else 'partial' if successes else 'failed',
+              'seed_note':'数字选择式和地域券均通过官方 CSV 严格校验后自动更新；无法识别的规则不会作未中奖判定。',
+              'errors':reported_errors, 'coverage':coverage,
               'draws': sorted(draws.values(),key=lambda d:(d['game'],d['draw']))}
     path.parent.mkdir(parents=True, exist_ok=True)
     temp=path.with_suffix('.tmp');temp.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');temp.replace(path)

@@ -1,6 +1,6 @@
 import unittest
 
-from sync_data import gateway_entries, parse_official_csv
+from sync_data import gateway_entries, parse_official_csv, parse_regional_csv
 
 
 class CsvFallbackTests(unittest.TestCase):
@@ -50,6 +50,38 @@ class CsvFallbackTests(unittest.TestCase):
                          [(694, 'A1030694.CSV'), (693, 'A1030693.CSV')])
         with self.assertRaises(ValueError):
             gateway_entries("第0693回\n第0694回", 'loto7')
+
+    def test_tokyo_manifest_contains_complete_draw(self):
+        text = """A01
+第2656回 東  京  都宝くじ, 幸運のクーちゃんくじ, 令和 8年 6月19日, 東京 宝くじドリーム館
+支払期間, 令和 8年 6月24日から令和 9年 6月23日まで
+１　等, 3000万円,08組,120451
+１等の前後賞, 1000万円,１等の前後の番号,,
+１等の組違い賞, 10万円,１等の組違い同番号,,
+２　等, 50万円, 各組共通,194680
+３　等, 5000円, 下３ケタ,392
+４　等, 2000円, 下２ケタ,98
+５　等, 200円, 下１ケタ,0
+幸運のｸｰちゃん賞, 3万円, 下４ケタ,5699
+"""
+        draw = parse_regional_csv(text, 'tokyo', 'official.csv')[0]
+        self.assertEqual((draw['draw'], draw['date']), (2656, '2026-06-19'))
+        self.assertEqual(draw['rules'][0]['kind'], 'exact')
+        self.assertEqual(draw['rules'][0]['yen'], 30000000)
+        self.assertEqual(draw['rules'][-1]['digits'], '5699')
+
+    def test_nationwide_decimal_yen_and_group_suffix(self):
+        text = """A01
+第1116回 全  国  自  治宝くじ, サマージャンボミニ, 令和 8年 8月12日, 東京
+支払期間, 令和 8年 8月17日から令和 9年 8月16日まで
+１　等, 1.5億円, 組下１ケタ8組,143069
+１等の前後賞, 1000万円,１等の前後の番号,,
+２　等, 1万円, 下３ケタ,138
+"""
+        draw = parse_regional_csv(text, 'zenkoku', 'official.csv')[0]
+        self.assertEqual(draw['rules'][0]['yen'], 150000000)
+        self.assertEqual(draw['rules'][0]['kind'], 'group_suffix')
+        self.assertEqual(draw['rules'][0]['group_digits'], '8')
 
 
 if __name__ == '__main__':

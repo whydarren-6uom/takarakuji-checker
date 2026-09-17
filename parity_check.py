@@ -22,6 +22,11 @@ def draw(game, number=None):
 draws = [draw('loto7', 691), draw('loto6', 2137), draw('miniloto'),
          draw('bingo5', 488), draw('numbers3', 7072), draw('numbers4')]
 draws += [draw(game) for game in REGIONAL]
+draws.append({'game':'zenkoku','draw':1116,'date':'2026-08-12','source':'https://www.mizuhobank.co.jp/',
+              'rules':[{'grade':'1等','yen':30000000,'group':'組下1ケタ8組','number':'143069番',
+                        'kind':'group_suffix','digits':'143069','group_digits':'8'},
+                       {'grade':'1等の前後賞','yen':10000000,'group':'','number':'1等の前後の番号',
+                        'kind':'adjacent'}]})
 first_regional = next(r for r in draws[6]['rules']
                       if r['grade'] == '1等' and r['kind'] == 'exact')
 cases = [
@@ -35,6 +40,7 @@ cases = [
     {'game': 'numbers4', 'draw': draws[5]['draw'], 'number': draws[5]['number'], 'mode': 'straight'},
     {'game': 'tokyo', 'draw': REGIONAL['tokyo'], 'group': str(first_regional['group_id']),
      'number': first_regional['digits']},
+    {'game': '全国通常宝くじ', 'draw': 1116, 'group': '18', 'number': '143068'},
     {'game': 'loto7', 'draw': 999999, 'numbers': [1, 2, 3, 4, 5, 6, 7]},
 ]
 
