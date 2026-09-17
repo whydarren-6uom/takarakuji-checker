@@ -69,5 +69,5 @@ jobs:
       - name: Report synchronization failure
         if: steps.sync.outcome == 'failure'
         run: |
-          echo 'Pages published with previous valid data; official synchronization failed.' >> "$GITHUB_STEP_SUMMARY"
-          exit 1
+          echo '### ⚠️ Official synchronization was unavailable' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Pages were published with the previous validated data snapshot. The site displays the failed synchronization state and does not claim the data is current.' >> "$GITHUB_STEP_SUMMARY"
