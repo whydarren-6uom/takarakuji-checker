@@ -1,0 +1,73 @@
+name: Sync and deploy Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Refresh all available historical months
+        type: boolean
+        default: true
+  schedule:
+    - cron: '30 12 * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: lottery-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Test parser and checker parity
+        run: |
+          python -m unittest -v
+          python parity_check.py
+      - name: Refresh official results (preserve previous valid draws on failure)
+        id: sync
+        continue-on-error: true
+        env:
+          FULL: ${{ github.event.inputs.full }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$FULL" = "true" ] || [ "$EVENT" = "push" ]; then
+            python sync_data.py --full
+          else
+            python sync_data.py
+          fi
+      - name: Preserve data snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add web/data/results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update official result snapshot [skip ci]'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: web
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Report synchronization failure
+        if: steps.sync.outcome == 'failure'
+        run: |
+          echo 'Pages published with previous valid data; official synchronization failed.' >> "$GITHUB_STEP_SUMMARY"
+          exit 1

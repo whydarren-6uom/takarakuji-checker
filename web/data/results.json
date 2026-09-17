@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "last_attempt": "2026-09-17T00:00:00+00:00",
+  "last_success": "2026-09-17T00:00:00+00:00",
+  "last_complete_success": null,
+  "sync_status": "partial",
+  "seed_note": "首版包含经真实官网 DOM 样本验证的开奖；自动同步会继续扩展历史范围。",
+  "errors": [],
+  "coverage": {},
+  "draws": [
+    {
+      "game": "bingo5",
+      "draw": 486,
+      "date": "2026-09-02",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
+      "prizes": {
+        "1等": 3666400,
+        "2等": 364100,
+        "3等": 45600,
+        "4等": 23000,
+        "5等": 2900,
+        "6等": 800,
+        "7等": 200
+      },
+      "numbers": [
+        2,
+        9,
+        15,
+        17,
+        22,
+        29,
+        35,
+        36
+      ],
+      "bonus": [],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "bingo5",
+      "draw": 487,
+      "date": "2026-09-09",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
+      "prizes": {
+        "1等": 4584000,
+        "2等": 351300,
+        "3等": 50700,
+        "4等": 20300,
+        "5等": 2600,
+        "6等": 500,
+        "7等": 200
+      },
+      "numbers": [
+        3,
+        6,
+        11,
+        18,
+        23,
+        28,
+        31,
+        40
+      ],
+      "bonus": [],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "bingo5",
+      "draw": 488,
+      "date": "2026-09-16",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
+      "prizes": {
+        "1等": 4636500,
+        "2等": 365800,
+        "3等": 52400,
+        "4等": 22700,
+        "5等": 2800,
+        "6等": 700,
+        "7等": 200
+      },
+      "numbers": [
+        2,
+        8,
+        15,
+        17,
+        25,
+        30,
+        32,
+        38
+      ],
+      "bonus": [],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "chiiki",
+      "draw": 441,
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=chiiki",
+      "rules": [
+        {
+          "grade": "1等",
+          "yen": 100000000,
+          "group": "36組",
+          "number": "123183番",
+          "kind": "exact",
+          "digits": "123183",
+          "group_id": 36
+        },
+        {
+          "grade": "1等の前後賞",
+          "yen": 25000000,
+          "group": "",
+          "number": "1等の前後の番号",
+          "kind": "adjacent"
+        },
+        {
+          "grade": "1等の組違い賞",
+          "yen": 100000,
+          "group": "",
+          "number": "1等の組違い同番号",
+          "kind": "different_group"
+        },
+        {
+          "grade": "2等",
+          "yen": 500000,
+          "group": "各組共通",
+          "number": "163821番",
+          "kind": "any_group",
+          "digits": "163821"
+        },
+        {
+          "grade": "2等",
+          "yen": 500000,
+          "group": "各組共通",
+          "number": "129219番",
+          "kind": "any_group",
+          "digits": "129219"
+        },
+        {
+          "grade": "3等",
+          "yen": 50000,
+          "group": "下4ケタ",
+          "number": "4855番",
+          "kind": "suffix",
+          "digits": "4855"
+        },
+        {
+          "grade": "3等",
+          "yen": 50000,
+          "group": "下4ケタ",
+          "number": "7234番",
+          "kind": "suffix",
+          "digits": "7234"
+        },
+        {
+          "grade": "4等",
+          "yen": 10000,
+          "group": "下3ケタ",
+          "number": "027番",
+          "kind": "suffix",
+          "digits": "027"
+        },
+        {
+          "grade": "4等",
+          "yen": 10000,
+          "group": "下3ケタ",
+          "number": "883番",
+          "kind": "suffix",
+          "digits": "883"
+        },
+        {
+          "grade": "5等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "92番",
+          "kind": "suffix",
+          "digits": "92"
+        },
+        {
+          "grade": "5等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "70番",
+          "kind": "suffix",
+          "digits": "70"
+        },
+        {
+          "grade": "6等",
+          "yen": 200,
+          "group": "下1ケタ",
+          "number": "3番",
+          "kind": "suffix",
+          "digits": "3"
+        }
+      ],
+      "抽せん日": "令和8年8月28日",
+      "支払期間": "令和8年9月2日から令和9年9月1日まで",
+      "date": "2026-08-28",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "kct",
+      "draw": 2708,
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kct",
+      "rules": [
+        {
+          "grade": "1等",
+          "yen": 20000000,
+          "group": "03組",
+          "number": "100543番",
+          "kind": "exact",
+          "digits": "100543",
+          "group_id": 3
+        },
+        {
+          "grade": "1等の前後賞",
+          "yen": 5000000,
+          "group": "",
+          "number": "1等の前後の番号",
+          "kind": "adjacent"
+        },
+        {
+          "grade": "1等の組違い賞",
+          "yen": 100000,
+          "group": "",
+          "number": "1等の組違い同番号",
+          "kind": "different_group"
+        },
+        {
+          "grade": "2等",
+          "yen": 300000,
+          "group": "各組共通",
+          "number": "172176番",
+          "kind": "any_group",
+          "digits": "172176"
+        },
+        {
+          "grade": "3等",
+          "yen": 30000,
+          "group": "下4ケタ",
+          "number": "2789番",
+          "kind": "suffix",
+          "digits": "2789"
+        },
+        {
+          "grade": "4等",
+          "yen": 5000,
+          "group": "下3ケタ",
+          "number": "431番",
+          "kind": "suffix",
+          "digits": "431"
+        },
+        {
+          "grade": "4等",
+          "yen": 5000,
+          "group": "下3ケタ",
+          "number": "471番",
+          "kind": "suffix",
+          "digits": "471"
+        },
+        {
+          "grade": "5等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "46番",
+          "kind": "suffix",
+          "digits": "46"
+        },
+        {
+          "grade": "6等",
+          "yen": 100,
+          "group": "下1ケタ",
+          "number": "1番",
+          "kind": "suffix",
+          "digits": "1"
+        }
+      ],
+      "抽せん日": "令和8年3月13日",
+      "支払期間": "令和8年3月18日から令和9年3月17日まで",
+      "date": "2026-03-13",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "kinki",
+      "draw": 2845,
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kinki",
+      "rules": [
+        {
+          "grade": "1等",
+          "yen": 15000000,
+          "group": "20組",
+          "number": "116169番",
+          "kind": "exact",
+          "digits": "116169",
+          "group_id": 20
+        },
+        {
+          "grade": "1等の前後賞",
+          "yen": 2500000,
+          "group": "",
+          "number": "1等の前後の番号",
+          "kind": "adjacent"
+        },
+        {
+          "grade": "1等の組違い賞",
+          "yen": 100000,
+          "group": "",
+          "number": "1等の組違い同番号",
+          "kind": "different_group"
+        },
+        {
+          "grade": "2等",
+          "yen": 300000,
+          "group": "各組共通",
+          "number": "146204番",
+          "kind": "any_group",
+          "digits": "146204"
+        },
+        {
+          "grade": "3等",
+          "yen": 30000,
+          "group": "下4ケタ",
+          "number": "0347番",
+          "kind": "suffix",
+          "digits": "0347"
+        },
+        {
+          "grade": "4等",
+          "yen": 5000,
+          "group": "下3ケタ",
+          "number": "000番",
+          "kind": "suffix",
+          "digits": "000"
+        },
+        {
+          "grade": "5等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "54番",
+          "kind": "suffix",
+          "digits": "54"
+        },
+        {
+          "grade": "6等",
+          "yen": 100,
+          "group": "下1ケタ",
+          "number": "8番",
+          "kind": "suffix",
+          "digits": "8"
+        }
+      ],
+      "抽せん日": "令和8年8月28日",
+      "支払期間": "令和8年9月2日から令和9年9月1日まで",
+      "date": "2026-08-28",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto6",
+      "draw": 2134,
+      "date": "2026-09-03",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
+      "prizes": {
+        "1等": 242963300,
+        "2等": 5390700,
+        "3等": 194000,
+        "4等": 5300,
+        "5等": 1000
+      },
+      "numbers": [
+        5,
+        9,
+        10,
+        19,
+        26,
+        35
+      ],
+      "bonus": [
+        18
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto6",
+      "draw": 2135,
+      "date": "2026-09-07",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
+      "prizes": {
+        "1等": null,
+        "2等": 23183400,
+        "3等": 449700,
+        "4等": 8400,
+        "5等": 1000
+      },
+      "numbers": [
+        7,
+        13,
+        32,
+        34,
+        37,
+        39
+      ],
+      "bonus": [
+        41
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto6",
+      "draw": 2136,
+      "date": "2026-09-10",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
+      "prizes": {
+        "1等": null,
+        "2等": 37945900,
+        "3等": 505900,
+        "4等": 8900,
+        "5等": 1000
+      },
+      "numbers": [
+        6,
+        7,
+        33,
+        37,
+        41,
+        43
+      ],
+      "bonus": [
+        42
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto6",
+      "draw": 2137,
+      "date": "2026-09-14",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
+      "prizes": {
+        "1等": 370144100,
+        "2等": 6387600,
+        "3等": 227400,
+        "4等": 5300,
+        "5等": 1000
+      },
+      "numbers": [
+        4,
+        8,
+        10,
+        25,
+        28,
+        33
+      ],
+      "bonus": [
+        9
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 689,
+      "date": "2026-08-07",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": 1200000000,
+        "2等": 9453700,
+        "3等": 573100,
+        "4等": 6800,
+        "5等": 1400,
+        "6等": 1000
+      },
+      "numbers": [
+        4,
+        18,
+        23,
+        24,
+        32,
+        33,
+        35
+      ],
+      "bonus": [
+        29,
+        36
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 690,
+      "date": "2026-08-14",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": null,
+        "2等": 7708900,
+        "3等": 657700,
+        "4等": 7500,
+        "5等": 1500,
+        "6等": 1000
+      },
+      "numbers": [
+        3,
+        10,
+        14,
+        17,
+        18,
+        20,
+        25
+      ],
+      "bonus": [
+        19,
+        34
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 691,
+      "date": "2026-08-21",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": null,
+        "2等": 6234800,
+        "3等": 516300,
+        "4等": 7700,
+        "5等": 1500,
+        "6等": 1000
+      },
+      "numbers": [
+        8,
+        10,
+        20,
+        22,
+        23,
+        27,
+        37
+      ],
+      "bonus": [
+        2,
+        9
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "loto7",
+      "draw": 692,
+      "date": "2026-08-28",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "prizes": {
+        "1等": null,
+        "2等": 4887100,
+        "3等": 562900,
+        "4等": 6500,
+        "5等": 1300,
+        "6等": 900
+      },
+      "numbers": [
+        7,
+        9,
+        15,
+        18,
+        20,
+        28,
+        31
+      ],
+      "bonus": [
+        21,
+        34
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "miniloto",
+      "draw": 1402,
+      "date": "2026-09-01",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
+      "prizes": {
+        "1等": 23075100,
+        "2等": 252200,
+        "3等": 12100,
+        "4等": 1000
+      },
+      "numbers": [
+        1,
+        4,
+        20,
+        25,
+        29
+      ],
+      "bonus": [
+        22
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "miniloto",
+      "draw": 1403,
+      "date": "2026-09-08",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
+      "prizes": {
+        "1等": 14315900,
+        "2等": 154900,
+        "3等": 10500,
+        "4等": 900
+      },
+      "numbers": [
+        8,
+        11,
+        14,
+        17,
+        19
+      ],
+      "bonus": [
+        24
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "miniloto",
+      "draw": 1404,
+      "date": "2026-09-15",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
+      "prizes": {
+        "1等": 13163700,
+        "2等": 130400,
+        "3等": 9700,
+        "4等": 900
+      },
+      "numbers": [
+        2,
+        3,
+        4,
+        9,
+        31
+      ],
+      "bonus": [
+        11
+      ],
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "nishinihon",
+      "draw": 2531,
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=nishinihon",
+      "rules": [
+        {
+          "grade": "1等",
+          "yen": 15000000,
+          "group": "17組",
+          "number": "185139番",
+          "kind": "exact",
+          "digits": "185139",
+          "group_id": 17
+        },
+        {
+          "grade": "1等の前後賞",
+          "yen": 2500000,
+          "group": "",
+          "number": "1等の前後の番号",
+          "kind": "adjacent"
+        },
+        {
+          "grade": "1等の組違い賞",
+          "yen": 100000,
+          "group": "",
+          "number": "1等の組違い同番号",
+          "kind": "different_group"
+        },
+        {
+          "grade": "2等",
+          "yen": 300000,
+          "group": "各組共通",
+          "number": "134620番",
+          "kind": "any_group",
+          "digits": "134620"
+        },
+        {
+          "grade": "3等",
+          "yen": 30000,
+          "group": "下4ケタ",
+          "number": "1486番",
+          "kind": "suffix",
+          "digits": "1486"
+        },
+        {
+          "grade": "3等",
+          "yen": 30000,
+          "group": "下4ケタ",
+          "number": "6962番",
+          "kind": "suffix",
+          "digits": "6962"
+        },
+        {
+          "grade": "4等",
+          "yen": 5000,
+          "group": "下3ケタ",
+          "number": "311番",
+          "kind": "suffix",
+          "digits": "311"
+        },
+        {
+          "grade": "5等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "19番",
+          "kind": "suffix",
+          "digits": "19"
+        },
+        {
+          "grade": "6等",
+          "yen": 100,
+          "group": "下1ケタ",
+          "number": "1番",
+          "kind": "suffix",
+          "digits": "1"
+        }
+      ],
+      "抽せん日": "令和8年8月28日",
+      "支払期間": "令和8年9月2日から令和9年9月1日まで",
+      "date": "2026-08-28",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7061,
+      "date": "2026-09-01",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 116900,
+        "box": 38900,
+        "set_straight": 77900,
+        "set_box": 19400,
+        "mini": 11600
+      },
+      "number": "882",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7062,
+      "date": "2026-09-02",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 81800,
+        "box": 27200,
+        "set_straight": 54500,
+        "set_box": 13600,
+        "mini": 8100
+      },
+      "number": "212",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7063,
+      "date": "2026-09-03",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 117800,
+        "box": 39200,
+        "set_straight": 78500,
+        "set_box": 19600,
+        "mini": 11700
+      },
+      "number": "166",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7064,
+      "date": "2026-09-04",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 93300,
+        "box": 15500,
+        "set_straight": 54400,
+        "set_box": 7700,
+        "mini": 9300
+      },
+      "number": "251",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7065,
+      "date": "2026-09-07",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 99500,
+        "box": 33100,
+        "set_straight": 66300,
+        "set_box": 16500,
+        "mini": 9900
+      },
+      "number": "282",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7066,
+      "date": "2026-09-08",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 110800,
+        "box": 18400,
+        "set_straight": 64600,
+        "set_box": 9200,
+        "mini": 11000
+      },
+      "number": "294",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7067,
+      "date": "2026-09-09",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 128500,
+        "box": 21400,
+        "set_straight": 74900,
+        "set_box": 10700,
+        "mini": 12800
+      },
+      "number": "650",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7068,
+      "date": "2026-09-10",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 101200,
+        "box": 16800,
+        "set_straight": 59000,
+        "set_box": 8400,
+        "mini": 10100
+      },
+      "number": "960",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7069,
+      "date": "2026-09-11",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 72000,
+        "box": 12000,
+        "set_straight": 42000,
+        "set_box": 6000,
+        "mini": 7200
+      },
+      "number": "908",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7070,
+      "date": "2026-09-14",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 67300,
+        "box": 22400,
+        "set_straight": 44800,
+        "set_box": 11200,
+        "mini": 6700
+      },
+      "number": "188",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7071,
+      "date": "2026-09-15",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 100500,
+        "box": 33500,
+        "set_straight": 67000,
+        "set_box": 16700,
+        "mini": 10000
+      },
+      "number": "553",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers3",
+      "draw": 7072,
+      "date": "2026-09-16",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "prizes": {
+        "straight": 99300,
+        "box": 33100,
+        "set_straight": 66200,
+        "set_box": 16500,
+        "mini": 9900
+      },
+      "number": "229",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7061,
+      "date": "2026-09-01",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1119900,
+        "box": 46600,
+        "set_straight": 583200,
+        "set_box": 23300
+      },
+      "number": "0639",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7062,
+      "date": "2026-09-02",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1221800,
+        "box": 101800,
+        "set_straight": 661800,
+        "set_box": 50900
+      },
+      "number": "8300",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7063,
+      "date": "2026-09-03",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 543000,
+        "box": 22600,
+        "set_straight": 282800,
+        "set_box": 11300
+      },
+      "number": "3691",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7064,
+      "date": "2026-09-04",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 958300,
+        "box": 79800,
+        "set_straight": 519000,
+        "set_box": 39900
+      },
+      "number": "0850",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7065,
+      "date": "2026-09-07",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 758800,
+        "box": 31600,
+        "set_straight": 395200,
+        "set_box": 15800
+      },
+      "number": "3527",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7066,
+      "date": "2026-09-08",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1528800,
+        "box": 127400,
+        "set_straight": 828100,
+        "set_box": 63700
+      },
+      "number": "5540",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7067,
+      "date": "2026-09-09",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1085700,
+        "box": 45200,
+        "set_straight": 565400,
+        "set_box": 22600
+      },
+      "number": "9513",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7068,
+      "date": "2026-09-10",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 781300,
+        "box": 32500,
+        "set_straight": 406900,
+        "set_box": 16200
+      },
+      "number": "7263",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7069,
+      "date": "2026-09-11",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1021200,
+        "box": 42500,
+        "set_straight": 531800,
+        "set_box": 21200
+      },
+      "number": "6530",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7070,
+      "date": "2026-09-14",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1615200,
+        "box": 67300,
+        "set_straight": 841200,
+        "set_box": 33600
+      },
+      "number": "5706",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7071,
+      "date": "2026-09-15",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1060900,
+        "box": 88400,
+        "set_straight": 574600,
+        "set_box": 44200
+      },
+      "number": "6960",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "numbers4",
+      "draw": 7072,
+      "date": "2026-09-16",
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "prizes": {
+        "straight": 1322100,
+        "box": 110100,
+        "set_straight": 716100,
+        "set_box": 55000
+      },
+      "number": "9749",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "game": "tokyo",
+      "draw": 2661,
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=tokyo",
+      "rules": [
+        {
+          "grade": "1等",
+          "yen": 15000000,
+          "group": "05組",
+          "number": "178080番",
+          "kind": "exact",
+          "digits": "178080",
+          "group_id": 5
+        },
+        {
+          "grade": "1等の前後賞",
+          "yen": 2500000,
+          "group": "",
+          "number": "1等の前後の番号",
+          "kind": "adjacent"
+        },
+        {
+          "grade": "1等の組違い賞",
+          "yen": 100000,
+          "group": "",
+          "number": "1等の組違い同番号",
+          "kind": "different_group"
+        },
+        {
+          "grade": "2等",
+          "yen": 10000,
+          "group": "下4ケタ",
+          "number": "0248番",
+          "kind": "suffix",
+          "digits": "0248"
+        },
+        {
+          "grade": "3等",
+          "yen": 2000,
+          "group": "下3ケタ",
+          "number": "614番",
+          "kind": "suffix",
+          "digits": "614"
+        },
+        {
+          "grade": "4等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "64番",
+          "kind": "suffix",
+          "digits": "64"
+        },
+        {
+          "grade": "4等",
+          "yen": 1000,
+          "group": "下2ケタ",
+          "number": "97番",
+          "kind": "suffix",
+          "digits": "97"
+        },
+        {
+          "grade": "5等",
+          "yen": 100,
+          "group": "下1ケタ",
+          "number": "5番",
+          "kind": "suffix",
+          "digits": "5"
+        }
+      ],
+      "抽せん日": "令和8年8月28日",
+      "支払期間": "令和8年9月2日から令和9年9月1日まで",
+      "date": "2026-08-28",
+      "fetched_at": "2026-09-17T00:00:00+00:00"
+    }
+  ]
+}

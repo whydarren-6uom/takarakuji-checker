@@ -1,0 +1,1 @@
+{"private":true,"type":"module","scripts":{"test":"python3 -m unittest -v && python3 parity_check.py"}}

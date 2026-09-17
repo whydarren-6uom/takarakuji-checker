@@ -1,0 +1,8 @@
+[
+  {"game":"loto7", "draw":"0691", "month":"2026-08", "numbers":[1,2,3,4,5,6,7]},
+  {"game":"loto6", "draw":2137, "numbers":[1,2,3,4,5,6]},
+  {"game":"bingo5", "draw":488, "numbers":[1,6,11,16,21,26,31,36]},
+  {"game":"numbers3", "draw":7072, "number":"029", "mode":"straight"},
+  {"game":"numbers4", "draw":7072, "number":"0123", "mode":"set"},
+  {"game":"kct", "draw":2708, "month":"2026-03", "group":"03", "number":"123456"}
+]
